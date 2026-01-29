@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorry Baabu 💕</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd1e8, #fff5f9);
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 360px;
+      background: white;
+      border-radius: 25px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff4d88;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes {
+      background: #ff4d88;
+      color: white;
+    }
+
+    .no {
+      background: #ffd6e8;
+      color: #ff1f6b;
+    }
+
+    button:hover {
+      transform: scale(1.03);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- STEP 1 -->
+  <div class="card" id="step1">
+    <h1>Sorry Baabu 🥺💗</h1>
+    <p>
+      I’m really really sorry if I hurt you.<br>
+      I never wanted to upset you.<br><br>
+      Please forgive your <b>Bhujji</b> 🫶
+    </p>
+
+    <p>Will you accept my apology?</p>
+
+    <button class="yes" onclick="accept()">Yes 💕</button>
+    <button class="no" onclick="nope()">No 🙈</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="card hidden" id="step2">
+    <h1>Hehe 😌💖</h1>
+    <p>
+      Oh nooo… you clicked No 🙈<br><br>
+      But Baabu, listen na 🥹<br>
+      You have only <b>one choice</b>…<br>
+      because Bhujji loves you sooo much 💕
+    </p>
+
+    <button class="yes" onclick="accept()">Okay, I forgive you ❤️</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="card hidden" id="step3">
+    <h1>Yayyyy 🥰✨</h1>
+    <p>
+      Thank you for forgiving me, Baabu 💖<br><br>
+      Now that everything is okay…<br>
+      Will you please come on a cute date with me? 🌸🍦
+    </p>
+
+    <button class="yes" onclick="confirmDate()">Yes, let’s go 😍</button>
+  </div>
+
+  <script>
+    function accept() {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("step3").classList.remove("hidden");
+    }
+
+    function nope() {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+    }
+
+    function confirmDate() {
+      alert("Date confirmed 💑💖\nBhujji is soooo happy!");
+    }
+  </script>
+
+</body>
+</html>
